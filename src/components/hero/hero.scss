@@ -1,0 +1,66 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - 100px);
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+
+  .wrapper {
+    max-width: 1366px;
+    height: 100%;
+    margin: auto;
+
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+      width: 50%;
+      height: 100%;
+
+      h2 {
+        font-size: 30px;
+        color: rebeccapurple;
+        letter-spacing: 10px;
+      }
+
+      h1 {
+        font-size: 88px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        button {
+          padding: 20px;
+          border: 1px solid #fff;
+          border-radius: 10px;
+          background-color: transparent;
+          color: #fff;
+          font-weight: 300;
+          cursor: pointer;
+        }
+      }
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+
+  .imageContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+
+  .slidingTextContainer {
+    position: absolute;
+    bottom: -120px;
+    font-size: 50vh;
+    white-space: nowrap;
+    color: #ffffff09;
+  }
+}
