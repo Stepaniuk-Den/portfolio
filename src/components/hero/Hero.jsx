@@ -39,6 +39,16 @@ const slideVariants = {
   },
 };
 
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+};
+
 const Hero = () => {
   return (
     <div className="hero">
@@ -52,10 +62,21 @@ const Hero = () => {
           <motion.h2 variants={textVariants}>STEPANIUK DENYS</motion.h2>
           <motion.h1 variants={textVariants}>Web developer</motion.h1>
           <motion.div className="buttons" variants={textVariants}>
-            <motion.button variants={textVariants}>
+            <motion.button
+              variants={textVariants}
+              whileHover={{ backgroundColor: "#ffffff", color: "#000000" }}
+              onClick={() => scrollToSection("Portfolio")}
+            >
               See the Latest Works
             </motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+            <motion.button
+              variants={textVariants}
+              whileHover={{ backgroundColor: "#ffffff", color: "#000000" }}
+              onClick={() => scrollToSection("Contact")}
+              // whileTap={}
+            >
+              Contact Me
+            </motion.button>
           </motion.div>
           <motion.img
             src="/scroll.png"

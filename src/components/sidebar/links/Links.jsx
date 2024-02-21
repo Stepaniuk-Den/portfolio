@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
 const variants = {
@@ -25,7 +26,7 @@ const itemVariants = {
   },
 };
 
-const Links = () => {
+const Links = ({ handleCallBack }) => {
   const items = ["Homepage", "Services", "Portfolio", "Contact", "About"];
 
   return (
@@ -37,6 +38,7 @@ const Links = () => {
           variants={itemVariants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => handleCallBack(false)}
         >
           {item}
         </motion.a>
@@ -45,4 +47,7 @@ const Links = () => {
   );
 };
 
+Links.propTypes = {
+  handleCallBack: PropTypes.func.isRequired,
+};
 export default Links;
