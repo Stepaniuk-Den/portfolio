@@ -44,43 +44,45 @@ const Contact = () => {
   };
 
   return (
-    <motion.div
-      ref={ref}
-      className="contact"
-      variants={variants}
-      initial="initial"
-      whileInView="animate"
-    >
-      <motion.div className="textContainer" variants={variants}>
-        <motion.h1 variants={variants}>Let&apos;s work together</motion.h1>
-        <motion.div className="item" variants={variants}>
-          <h2>Mail</h2>
-          <span>stepaniuk.den@gmail.com</span>
+    <div className="wrapper">
+      <motion.div
+        ref={ref}
+        className="contact"
+        variants={variants}
+        initial="initial"
+        // whileInView={isInView && "animate"}
+        animate={isInView && "animate"}
+      >
+        <motion.div className="textContainer" variants={variants}>
+          <motion.h1 variants={variants}>Let&apos;s work together</motion.h1>
+          <motion.div className="item" variants={variants}>
+            <h2>Mail</h2>
+            <span>stepaniuk.den@gmail.com</span>
+          </motion.div>
+          <motion.div className="item" variants={variants}>
+            <h2>Phone</h2>
+            <span>+380930533555</span>
+          </motion.div>
+          <motion.div className="item" variants={variants}>
+            <h2>Address</h2>
+            <span>Ukraine</span>
+          </motion.div>
         </motion.div>
-        <motion.div className="item" variants={variants}>
-          <h2>Phone</h2>
-          <span>+380930533555</span>
-        </motion.div>
-        <motion.div className="item" variants={variants}>
-          <h2>Address</h2>
-          <span>Ukraine</span>
-        </motion.div>
-      </motion.div>
-      <div className="formContainer">
-        <motion.div
-          className="phoneSvg"
-          initial={{ opacity: 1 }}
-          whileInView={{ opacity: 0 }}
-          transition={{ delay: 3, duration: 1 }}
-        >
-          <svg height="450px" width="450px" viewBox="0 0 512.107 512.107">
-            <motion.path
-              fill="none"
-              strokeWidth={2}
-              initial={{ pathLength: 0 }}
-              animate={isInView && { pathLength: 1 }}
-              transition={{ duration: 3 }}
-              d="M256,0.053c-141.12,0-256,114.88-256,256s114.88,256,255.893,256h2.773c101.973,0,137.387-46.827,145.813-61.333
+        <div className="formContainer">
+          <motion.div
+            className="phoneSvg"
+            initial={{ opacity: 1 }}
+            whileInView={{ opacity: 0 }}
+            transition={{ delay: 2, duration: 1 }}
+          >
+            <svg height="450px" width="450px" viewBox="0 0 512.107 512.107">
+              <motion.path
+                fill="none"
+                strokeWidth={2}
+                initial={{ pathLength: 0 }}
+                animate={isInView && { pathLength: 1 }}
+                transition={{ duration: 2 }}
+                d="M256,0.053c-141.12,0-256,114.88-256,256s114.88,256,255.893,256h2.773c101.973,0,137.387-46.827,145.813-61.333
 			c9.493-16.32,11.093-33.28,4.16-45.44c-4.053-6.933-10.667-11.84-18.453-13.76l4.48-4.48c14.293-14.293,14.187-37.44-0.107-51.733
 			c-1.067-1.067-2.133-2.027-3.307-2.987l-43.093-33.6c-13.227-10.347-31.893-10.347-45.013,0.107l-9.6,7.573
 			c-5.973,4.8-14.613,4.267-20.053-1.173L196.48,228c-5.44-5.44-5.973-14.187-1.173-20.16l7.573-9.6
@@ -96,25 +98,44 @@ const Contact = () => {
 			h0.96c4.373,0.213,8.427,2.347,10.987,5.867l33.493,43.2c4.267,5.547,4.267,13.333-0.107,18.773l-7.573,9.6
 			c-11.413,14.507-10.24,35.307,2.773,48.427l77.013,77.227c13.12,13.12,33.92,14.293,48.427,2.88l9.6-7.573
 			c5.44-4.373,13.227-4.373,18.667-0.107l43.093,33.6C384.64,354.507,385.813,364.107,380.587,370.72z"
+              />
+            </svg>
+          </motion.div>
+          <motion.form
+            ref={formRef}
+            onSubmit={sendEmail}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 3, duration: 1 }}
+            // variants={variants}
+          >
+            <motion.input
+              variants={variants}
+              type="text"
+              placeholder="Name"
+              required
+              name="name"
             />
-          </svg>
-        </motion.div>
-        <motion.form
-          ref={formRef}
-          onSubmit={sendEmail}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 4, duration: 1 }}
-        >
-          <input type="text" placeholder="Name" required name="name" />
-          <input type="email" placeholder="Email" required name="email" />
-          <textarea rows={8} placeholder="Message" name="message" />
-          <button>Submit</button>
-          {error && "Error"}
-          {success && "Success"}
-        </motion.form>
-      </div>
-    </motion.div>
+            <motion.input
+              variants={variants}
+              type="email"
+              placeholder="Email"
+              required
+              name="email"
+            />
+            <motion.textarea
+              variants={variants}
+              rows={8}
+              placeholder="Message"
+              name="message"
+            />
+            <motion.button variants={variants}>Submit</motion.button>
+            {error && "Error"}
+            {success && "Success"}
+          </motion.form>
+        </div>
+      </motion.div>
+    </div>
   );
 };
 
