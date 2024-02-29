@@ -27,7 +27,7 @@ const itemVariants = {
 };
 
 const Links = ({ handleCallBack }) => {
-  const items = ["Homepage", "Services", "Portfolio", "Contact", "About"];
+  const items = ["Homepage", "Services", "Portfolio", "Contact", "About Me"];
 
   return (
     <motion.div className="links" variants={variants}>
