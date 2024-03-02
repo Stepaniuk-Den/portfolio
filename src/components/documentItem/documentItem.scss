@@ -1,0 +1,53 @@
+@import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+
+.documentsItem {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .documentWrapper {
+    width: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .buttonBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    width: calc(100% - 20px);
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: $soft-bg;
+    border-radius: 10px;
+
+    button {
+      width: 50px;
+      height: 50px;
+      color: $main-color;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        transition: all 300ms ease-in-out;
+
+        &:hover {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  &:hover .buttonBox {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: all 300ms ease-in-out;
+  }
+}

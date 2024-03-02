@@ -73,7 +73,6 @@ const Hero = () => {
               variants={textVariants}
               whileHover={{ backgroundColor: "#ffffff", color: "#000000" }}
               onClick={() => scrollToSection("Contact")}
-              // whileTap={}
             >
               Contact Me
             </motion.button>
