@@ -103,11 +103,6 @@
         grid-auto-rows: minmax(150px, auto);
         grid-auto-flow: dense;
         gap: 20px;
-
-        .documentWrapper {
-          width: 150px;
-          cursor: pointer;
-        }
       }
     }
   }
