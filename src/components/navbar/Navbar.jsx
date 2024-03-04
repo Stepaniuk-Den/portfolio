@@ -15,7 +15,7 @@ const Navbar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Stepaniuk Den
+          Stepaniuk Denys
         </motion.span>
         <div className="social">
           <a

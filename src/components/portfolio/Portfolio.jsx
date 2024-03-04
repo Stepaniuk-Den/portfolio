@@ -2,33 +2,9 @@ import "./portfolio.scss";
 import PropTypes from "prop-types";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
-
-const items = [
-  {
-    id: 1,
-    title: "Project 1",
-    img: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=600",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur in earum sed error amet laboriosam. Nisi reprehenderit aspernatur sunt earum sint tenetur cumque dolores accusantium totam minus animi, fugit quis?",
-  },
-  {
-    id: 2,
-    title: "Project 2",
-    img: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=600",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur in earum sed error amet laboriosam. Nisi reprehenderit aspernatur sunt earum sint tenetur cumque dolores accusantium totam minus animi, fugit quis?",
-  },
-  {
-    id: 3,
-    title: "Project 3",
-    img: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=600",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur in earum sed error amet laboriosam. Nisi reprehenderit aspernatur sunt earum sint tenetur cumque dolores accusantium totam minus animi, fugit quis?",
-  },
-  {
-    id: 4,
-    title: "Project 4",
-    img: "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=600",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur in earum sed error amet laboriosam. Nisi reprehenderit aspernatur sunt earum sint tenetur cumque dolores accusantium totam minus animi, fugit quis?",
-  },
-];
+import { projects } from "../../data/projects";
+import Github from "../../assets/icons/github copy.svg";
+import Safari from "../../assets/icons/safari.svg";
 
 const Single = ({ item }) => {
   const ref = useRef();
@@ -44,12 +20,41 @@ const Single = ({ item }) => {
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
-            <img src={item.img} alt={item.title} />
+            <img src={item.img} alt={item.name} />
           </div>
           <motion.div className="textContainer" style={{ y }}>
-            <h2>{item.title}</h2>
-            <p>{item.desc}</p>
-            <button>See Demo</button>
+            <h2>{item.name}</h2>
+            <p>{item.descEng}</p>
+            <div className="projectDetails">
+              <ul>
+                {item.technologies.map((technology) => (
+                  <li key={technology.id}>
+                    <div className="technologiesWrapper">
+                      <img
+                        src={technology.svg}
+                        alt={technology.name}
+                        loading="lazy"
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p>{item.roleEng}</p>
+            </div>
+            <div className="buttonContainer">
+              <button>
+                <a href={item.web} target="_blank" rel="noopener noreferrer">
+                  <img src={Safari} alt="Internet" />
+                  <span>See Demo</span>
+                </a>
+              </button>
+              <button>
+                <a href={item.gitHub} target="_blank" rel="noopener noreferrer">
+                  <img src={Github} alt="GitHub" />
+                  <span>Go to Repo</span>
+                </a>
+              </button>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -76,7 +81,7 @@ const Portfolio = () => {
         <h1>Featured Works</h1>
         <motion.div className="progressBar" style={{ scaleX }}></motion.div>
       </div>
-      {items.map((item) => (
+      {projects.map((item) => (
         <Single item={item} key={item.id} />
       ))}
     </div>
@@ -86,9 +91,15 @@ const Portfolio = () => {
 Single.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
-    desc: PropTypes.string.isRequired,
+    web: PropTypes.string.isRequired,
+    gitHub: PropTypes.string.isRequired,
+    descEng: PropTypes.string,
+    descUa: PropTypes.string,
+    roleEng: PropTypes.string,
+    roleUa: PropTypes.string,
+    technologies: PropTypes.array,
   }).isRequired,
 };
 

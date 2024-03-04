@@ -21,6 +21,7 @@ import Bootstrap from "../assets/icons/bootstrap.svg";
 import Figma from "../assets/icons/figma.svg";
 import Swagger from "../assets/icons/swagger.svg";
 import Firebase from "../assets/icons/firebase.svg";
+import Sass from "../assets/icons/sass.svg";
 
 export const technologies = [
   {
@@ -137,5 +138,10 @@ export const technologies = [
     id: 23,
     name: "Firebase",
     svg: Firebase,
+  },
+  {
+    id: 24,
+    name: "SASS",
+    svg: Sass,
   },
 ];

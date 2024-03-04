@@ -1,4 +1,5 @@
 @import "../../styles/global.scss";
+@import "../../styles/variables.scss";
 
 .portfolio {
   position: relative;
@@ -96,14 +97,77 @@
           font-size: 16px;
         }
       }
+      .buttonContainer {
+        display: flex;
+        gap: 10px;
 
-      button {
-        background-color: #ffa500;
-        border: none;
-        border-radius: 10px;
-        padding: 10px;
-        width: 200px;
-        cursor: pointer;
+        button {
+          background-color: none;
+          border: none;
+          border-radius: 6px;
+          padding: 5px;
+          width: 50px;
+          cursor: pointer;
+          transition: all 300ms ease-in-out;
+
+          &:hover {
+            width: 150px;
+            background-color: #ffa500;
+
+            span {
+              opacity: 1;
+            }
+          }
+
+          a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            span {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 100px;
+              opacity: 0;
+              transform: translate(-30%, -50%);
+              transition: all 300ms ease-in-out;
+            }
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+
+      .projectDetails {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 20px;
+        }
+        .technologiesWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 60px;
+          height: 60px;
+          background: $soft-bg;
+          border-radius: 13px;
+          overflow: hidden;
+
+          img {
+            width: 50px;
+            height: 50px;
+          }
+        }
       }
     }
   }

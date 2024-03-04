@@ -50,7 +50,6 @@ const Contact = () => {
         className="contact"
         variants={variants}
         initial="initial"
-        // whileInView={isInView && "animate"}
         animate={isInView && "animate"}
       >
         <motion.div className="textContainer" variants={variants}>
