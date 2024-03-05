@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import LinkComponent from "../linkComponent/LinkComponent";
+import { contacts } from "../../data/contacts";
 
 const variants = {
   initial: {
@@ -18,6 +20,8 @@ const variants = {
   },
 };
 const Contact = () => {
+  const { phone, email, address } = contacts;
+
   const ref = useRef();
   const formRef = useRef();
 
@@ -56,15 +60,29 @@ const Contact = () => {
           <motion.h1 variants={variants}>Let&apos;s work together</motion.h1>
           <motion.div className="item" variants={variants}>
             <h2>Mail</h2>
-            <span>stepaniuk.den@gmail.com</span>
+            <LinkComponent
+              to={`mailto:${email.email}`}
+              type="email"
+              text={email.text}
+              svg={email.svg}
+            />
           </motion.div>
           <motion.div className="item" variants={variants}>
             <h2>Phone</h2>
-            <span>+380930533555</span>
+            <LinkComponent
+              to={`tel:${phone.number}`}
+              type="phone"
+              text={phone.text}
+              svg={phone.svg}
+            />
           </motion.div>
           <motion.div className="item" variants={variants}>
             <h2>Address</h2>
-            <span>Ukraine</span>
+            <LinkComponent
+              to={`${address.location}`}
+              text={address.text}
+              svg={address.svg}
+            />
           </motion.div>
         </motion.div>
         <div className="formContainer">
@@ -75,6 +93,7 @@ const Contact = () => {
             transition={{ delay: 2, duration: 1 }}
           >
             <svg height="450px" width="450px" viewBox="0 0 512.107 512.107">
+              {/* <svg viewBox="0 0 512.107 512.107"> */}
               <motion.path
                 fill="none"
                 strokeWidth={2}
