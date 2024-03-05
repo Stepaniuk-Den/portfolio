@@ -1,4 +1,6 @@
 @import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
 
 .sidebar {
   display: flex;
@@ -17,7 +19,7 @@
     width: 400px;
     background: #fff;
 
-    @include mobile {
+    @include md {
       width: 220px;
     }
 
@@ -34,7 +36,7 @@
       a {
         font-size: 40px;
 
-        @include mobile {
+        @include md {
           font-size: 30px;
         }
       }

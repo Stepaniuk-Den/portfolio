@@ -11,8 +11,8 @@
 
   .contact {
     height: 100%;
-    // max-width: 1366px;
-    width: 100%;
+    max-width: 1366px;
+    // width: 100%;
     margin: auto;
     display: flex;
     align-items: center;
@@ -20,7 +20,6 @@
 
     @include lg {
       flex-direction: column;
-      // width: 100%;
       padding: 10px;
     }
 
@@ -63,7 +62,7 @@
       .phoneSvg {
         position: absolute;
         margin: auto;
-        stroke: #ffa500;
+        stroke: $main-accent;
         z-index: -1;
       }
 
@@ -76,8 +75,8 @@
         textArea {
           padding: 20px;
           background-color: transparent;
-          border: 1px solid #ffffff;
-          color: #ffffff;
+          border: 1px solid $main-color;
+          color: $main-color;
           border-radius: 10px;
 
           @include md {
@@ -86,7 +85,7 @@
         }
 
         button {
-          background-color: #ffa500;
+          background-color: $main-accent;
           border: none;
           border-radius: 10px;
           padding: 20px;

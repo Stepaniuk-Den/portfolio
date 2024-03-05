@@ -1,4 +1,6 @@
 @import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
 
 .navbar {
   height: 100px;
@@ -11,7 +13,10 @@
     align-items: center;
     justify-content: space-between;
 
-    @include mobile {
+    @include xxl {
+      width: calc(100% - 48px);
+    }
+    @include md {
       justify-content: flex-end;
       padding: 20px;
     }
@@ -19,8 +24,13 @@
     span {
       font-weight: bold;
       font-size: 24px;
+      margin-left: 5vw;
 
-      @include mobile {
+      @include xxl {
+        margin-left: 70px;
+      }
+
+      @include md {
         display: none;
       }
     }

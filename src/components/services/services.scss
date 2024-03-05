@@ -1,11 +1,14 @@
 @import "../../styles/global.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
 
 .services {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(180deg, #0c0c1d, #111132);
+  background: $linear-dark;
   height: 100%;
+  padding: 0 24px;
 
   .textContainer {
     flex: 1;
@@ -14,7 +17,7 @@
     align-items: center;
     gap: 20px;
 
-    @include mobile {
+    @include md {
       align-self: center;
       text-align: center;
       flex-direction: column;
@@ -32,7 +35,7 @@
       border: none;
       border-top: 0.5px solid grey;
 
-      @include mobile {
+      @include md {
         width: 300px;
       }
     }
@@ -44,7 +47,7 @@
     flex-direction: column;
     align-items: center;
 
-    @include mobile {
+    @include md {
       width: 100%;
       margin: 30px auto;
     }
@@ -54,7 +57,7 @@
       align-items: center;
       gap: 20px;
 
-      @include mobile {
+      @include md {
         flex-direction: column;
         text-align: center;
         gap: 20px;
@@ -66,7 +69,7 @@
         border-radius: 50px;
         object-fit: cover;
 
-        @include mobile {
+        @include md {
           width: 200px;
           height: 70px;
         }
@@ -76,7 +79,7 @@
         font-size: 96px;
         font-weight: 100;
 
-        @include mobile {
+        @include md {
           font-size: 36px;
         }
       }
@@ -86,11 +89,11 @@
         height: 100px;
         border-radius: 50px;
         border: none;
-        background-color: orange;
+        background-color: $main-accent;
         font-size: 24px;
         cursor: pointer;
 
-        @include mobile {
+        @include md {
           width: 200px;
           height: 70px;
           border-radius: 35px;
@@ -106,7 +109,7 @@
     max-width: 1366px;
     margin: auto;
 
-    @include mobile {
+    @include md {
       width: 100%;
       flex-direction: column;
     }
@@ -118,7 +121,7 @@
       flex-direction: column;
       justify-content: space-between;
 
-      @include mobile {
+      @include md {
         border: none;
         justify-content: center;
         align-items: center;
@@ -127,22 +130,22 @@
       }
 
       p {
-        @include mobile {
+        @include md {
           display: none;
         }
       }
 
       button {
         padding: 10px;
-        background-color: #ffa500;
+        background-color: $main-accent;
         border: none;
         cursor: pointer;
 
-        @include mobile {
+        @include md {
           background-color: transparent;
-          border: 1px solid #ffa500;
+          border: 1px solid $main-accent;
           border-radius: 10px;
-          color: #ffa500;
+          color: $main-accent;
           width: 200px;
         }
       }
