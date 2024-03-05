@@ -16,6 +16,10 @@
     @include xxl {
       width: calc(100% - 48px);
     }
+    @include xl {
+      padding: 0;
+    }
+
     @include md {
       justify-content: flex-end;
       padding: 20px;

@@ -52,12 +52,12 @@
 
     .imageContainer {
       flex: 1;
-      height: 50%;
+      height: 40%;
       border-radius: 20px;
       overflow: hidden;
 
       @include xxl {
-        // flex: 2;
+        height: 35%;
       }
       @include md {
         width: 100%;
@@ -91,6 +91,9 @@
       h2 {
         font-size: 72px;
 
+        @include xxl {
+          font-size: 48px;
+        }
         @include md {
           font-size: 36px;
         }
