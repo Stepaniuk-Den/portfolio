@@ -14,6 +14,11 @@
     margin: auto;
     padding: 0 24px;
 
+    @include md {
+      width: 100%;
+      height: 50%;
+    }
+
     .textContainer {
       display: flex;
       flex-direction: column;
@@ -82,8 +87,6 @@
     @include md {
       width: 100%;
       height: 50%;
-      // top: unset;
-      // bottom: 0;
     }
 
     img {

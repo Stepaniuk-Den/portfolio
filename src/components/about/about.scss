@@ -14,6 +14,10 @@
 
   h1 {
     font-size: 100px;
+
+    @include md {
+      font-size: 36px;
+    }
   }
 
   .aboutContainer {
@@ -25,8 +29,11 @@
       padding: 0 24px;
     }
 
-    @include md {
+    @include lg {
       flex-direction: column;
+    }
+    @include md {
+      gap: 30px;
     }
 
     p {
@@ -38,6 +45,11 @@
         font-size: 24px;
         height: 70px;
       }
+
+      @include md {
+        font-size: 18px;
+        height: 40px;
+      }
     }
 
     .technologies {
@@ -46,7 +58,7 @@
       flex: 1;
 
       @include lg {
-        align-items: flex-start;
+        align-items: center;
       }
       @include md {
         align-items: center;
@@ -64,8 +76,12 @@
         }
 
         @include lg {
-          grid-template-columns: repeat(4, 1fr);
-          // grid-gap: 10px;
+          grid-template-columns: repeat(6, 1fr);
+        }
+
+        @include md {
+          grid-template-columns: repeat(6, 1fr);
+          grid-gap: 10px;
         }
 
         li {
@@ -84,6 +100,10 @@
             width: 90px;
             height: 90px;
           }
+          @include md {
+            width: 50px;
+            height: 50px;
+          }
 
           .technologiesWrapper {
             display: flex;
@@ -96,6 +116,10 @@
             @include lg {
               width: 70px;
               height: 70px;
+            }
+            @include md {
+              width: 40px;
+              height: 40px;
             }
           }
 
@@ -115,6 +139,10 @@
             font-size: 14px;
             line-height: 0.8;
             opacity: 0;
+
+            @include md {
+              display: none;
+            }
           }
 
           &:hover .technologiesTitle {
@@ -144,7 +172,10 @@
           grid-template-columns: repeat(2, 1fr);
         }
         @include lg {
-          // grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(5, 1fr);
+        }
+        @include lg {
+          grid-template-columns: repeat(3, 1fr);
         }
       }
     }

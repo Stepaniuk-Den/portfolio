@@ -72,15 +72,14 @@
         width: 100%;
       }
       @include md {
-        padding: 50px;
-        width: 100%;
+        padding: 0 20px;
       }
 
       .phoneSvg {
         position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         margin: auto;
         stroke: $main-accent;
         z-index: -1;
@@ -88,9 +87,16 @@
         @include lg {
           width: calc(100% - 100px);
           height: calc(100% - 100px);
-          svg {
+        }
+
+        svg {
+          @include lg {
             width: 300px;
             height: 300px;
+          }
+          @include md {
+            width: 200px;
+            height: 200px;
           }
         }
       }

@@ -34,6 +34,10 @@
   height: 100%;
   overflow: hidden;
 
+  @include md {
+    padding-top: 20px;
+  }
+
   .wrapper {
     max-width: 1366px;
     height: 100%;
@@ -48,6 +52,7 @@
     }
     @include md {
       flex-direction: column;
+      gap: 20px;
     }
 
     .imageContainer {
@@ -63,7 +68,7 @@
         height: 45%;
       }
       @include md {
-        width: 100%;
+        width: 80%;
         max-height: 300px;
       }
 
@@ -73,7 +78,7 @@
         object-fit: cover;
 
         @include md {
-          object-fit: contain;
+          // object-fit: contain;
         }
       }
     }
@@ -89,6 +94,7 @@
         padding: 10px;
         align-items: center;
         text-align: center;
+        gap: 20px;
       }
 
       h2 {
@@ -160,12 +166,17 @@
         align-items: center;
         gap: 20px;
 
+        @include md {
+          flex-direction: column;
+        }
+
         ul {
           display: flex;
           align-items: center;
           justify-content: flex-start;
           gap: 20px;
         }
+
         .technologiesWrapper {
           display: flex;
           justify-content: center;
