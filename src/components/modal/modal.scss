@@ -20,7 +20,6 @@
     justify-content: flex-start;
     align-items: center;
     width: 50%;
-    // height: 100%;
     height: min-content;
     padding: 20px;
     border: none;
@@ -28,6 +27,10 @@
     background: #ffffff;
     color: #000000;
     overflow: auto;
+
+    @include sm {
+      width: 90%;
+    }
 
     .closeModal {
       position: absolute;

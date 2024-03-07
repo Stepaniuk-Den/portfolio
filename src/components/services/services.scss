@@ -28,6 +28,10 @@
       font-size: 20px;
       color: gray;
       text-align: right;
+
+      @include sm {
+        font-size: 18px;
+      }
     }
 
     hr {
@@ -69,7 +73,7 @@
         border-radius: 50px;
         object-fit: cover;
 
-        @include md {
+        @include lg {
           width: 200px;
           height: 70px;
         }
@@ -79,6 +83,9 @@
         font-size: 96px;
         font-weight: 100;
 
+        @include lg {
+          font-size: 52px;
+        }
         @include md {
           font-size: 36px;
         }
@@ -93,7 +100,7 @@
         font-size: 24px;
         cursor: pointer;
 
-        @include md {
+        @include lg {
           width: 200px;
           height: 70px;
           border-radius: 35px;
@@ -111,8 +118,12 @@
 
     @include xl {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       grid-auto-flow: dense;
+      grid-gap: 20px;
+    }
+    @include lg {
+      grid-template-columns: repeat(2, 1fr);
       grid-gap: 20px;
     }
 
@@ -123,14 +134,18 @@
     }
 
     .box {
-      padding: 50px;
+      padding: 30px;
       border: 0.5px solid grey;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      max-width: 300px;
 
-      @include lg {
+      @include xl {
         padding: 20px;
+      }
+      @include lg {
+        max-width: 350px;
       }
 
       @include md {
@@ -140,8 +155,18 @@
         gap: 20px;
         padding: 10px;
       }
+      @include sm {
+        max-width: 150px;
+      }
 
       p {
+        overflow-y: auto;
+        margin: 10px 0;
+
+        @include lg {
+          height: 80px;
+        }
+
         @include md {
           display: none;
         }
@@ -159,6 +184,13 @@
           border-radius: 10px;
           color: $main-accent;
           width: 200px;
+        }
+        @include md {
+          background-color: transparent;
+          border: 1px solid $main-accent;
+          border-radius: 10px;
+          color: $main-accent;
+          width: 120px;
         }
       }
     }

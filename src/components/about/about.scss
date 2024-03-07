@@ -15,6 +15,9 @@
   h1 {
     font-size: 100px;
 
+    @include lg {
+      font-size: 72px;
+    }
     @include md {
       font-size: 36px;
     }
@@ -43,7 +46,7 @@
 
       @include lg {
         font-size: 24px;
-        height: 70px;
+        height: 50px;
       }
 
       @include md {
@@ -76,7 +79,7 @@
         }
 
         @include lg {
-          grid-template-columns: repeat(6, 1fr);
+          grid-template-columns: repeat(8, 1fr);
         }
 
         @include md {
@@ -97,10 +100,6 @@
           cursor: pointer;
 
           @include lg {
-            width: 90px;
-            height: 90px;
-          }
-          @include md {
             width: 50px;
             height: 50px;
           }
@@ -114,10 +113,6 @@
             cursor: pointer;
 
             @include lg {
-              width: 70px;
-              height: 70px;
-            }
-            @include md {
               width: 40px;
               height: 40px;
             }
@@ -140,7 +135,7 @@
             line-height: 0.8;
             opacity: 0;
 
-            @include md {
+            @include lg {
               display: none;
             }
           }
@@ -173,8 +168,9 @@
         }
         @include lg {
           grid-template-columns: repeat(5, 1fr);
+          gap: 10px;
         }
-        @include lg {
+        @include md {
           grid-template-columns: repeat(3, 1fr);
         }
       }

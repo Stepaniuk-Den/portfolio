@@ -68,7 +68,7 @@
       position: relative;
 
       @include lg {
-        padding: 50px;
+        padding: 0 20px;
         width: 100%;
       }
       @include md {
@@ -83,6 +83,8 @@
         margin: auto;
         stroke: $main-accent;
         z-index: -1;
+        display: flex;
+        justify-content: center;
 
         @include lg {
           width: calc(100% - 100px);
