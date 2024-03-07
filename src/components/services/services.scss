@@ -31,6 +31,8 @@
 
       @include sm {
         font-size: 18px;
+        width: 250px;
+        align-self: flex-end;
       }
     }
 

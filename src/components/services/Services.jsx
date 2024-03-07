@@ -22,6 +22,7 @@ const Services = () => {
   const ref = useRef();
 
   const isInView = useInView(ref, { margin: "-100px" });
+  const screenWidth = window.screen.width;
 
   return (
     <motion.div
@@ -33,10 +34,14 @@ const Services = () => {
       ref={ref}
     >
       <motion.div className="textContainer" variants={variants}>
-        <p>
-          I focus on helping your brand grow
-          <br /> and move forward
-        </p>
+        {screenWidth > 430 ? (
+          <p>
+            I focus on helping your brand grow
+            <br /> and move forward
+          </p>
+        ) : (
+          <p>I focus on helping your brand grow and move forward</p>
+        )}
         <hr />
       </motion.div>
       <motion.div className="titleContainer" variants={variants}>
