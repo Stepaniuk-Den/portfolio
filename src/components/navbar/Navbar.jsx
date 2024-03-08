@@ -1,8 +1,14 @@
-import Sidebar from "../sidebar/Sidebar";
 import "./navbar.scss";
 import { motion } from "framer-motion";
+import Sidebar from "../sidebar/Sidebar";
+// import Telegram from "../../assets/icons/telegram.svg";
+// import Linkedin from "../../assets/icons/linkedin.svg";
+// import Github from "../../assets/icons/github copy.svg";
+import LinkComponent from "../linkComponent/LinkComponent";
+import { contacts } from "../../data/contacts";
 
 const Navbar = () => {
+  const { telegram, gitHub, linkedIn } = contacts;
   return (
     <div className="navbar">
       <Sidebar />
@@ -12,21 +18,33 @@ const Navbar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Stepaniuk Den
+          Stepaniuk Denys
         </motion.span>
         <div className="social">
-          <a href="#">
-            <img src="/facebook.png" alt="facebook" />
-          </a>
-          <a href="#">
-            <img src="/instagram.png" alt="instagram" />
-          </a>
-          <a href="#">
-            <img src="/youtube.png" alt="youtube" />
-          </a>
-          <a href="#">
-            <img src="/dribbble.png" alt="dribbble" />
-          </a>
+          {/* <a
+            href="https://t.me/StepaniukDenys"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Telegram} alt="telegram" />
+          </a> */}
+          <LinkComponent to={`${telegram.telegram}`} svg={telegram.svg} />
+          {/* <a
+            href="https://www.linkedin.com/in/denys-stepaniuk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Linkedin} alt="linkedin" />
+          </a> */}
+          <LinkComponent to={`${linkedIn.linkedIn}`} svg={linkedIn.svg} />
+          {/* <a
+            href="https://github.com/Stepaniuk-Den"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Github} alt="github" />
+          </a> */}
+          <LinkComponent to={`${gitHub.gitHub}`} svg={gitHub.svg} />
         </div>
       </div>
     </div>

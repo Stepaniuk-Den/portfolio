@@ -1,0 +1,11 @@
+.linkComponent {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  gap: 20px;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
