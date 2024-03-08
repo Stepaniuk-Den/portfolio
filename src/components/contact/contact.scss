@@ -24,8 +24,7 @@
 
     @include lg {
       flex-direction: column;
-      gap: 20px;
-      // padding: 10px;
+      gap: 70px;
     }
 
     .textContainer {
@@ -37,8 +36,8 @@
       @include lg {
         align-items: center;
         text-align: center;
-        gap: 10px;
-        // margin-top: 70px;
+        justify-content: flex-end;
+        gap: 20px;
       }
 
       h1 {
@@ -49,7 +48,7 @@
           font-size: 64px;
         }
         @include md {
-          font-size: 36px;
+          font-size: 48px;
         }
       }
 

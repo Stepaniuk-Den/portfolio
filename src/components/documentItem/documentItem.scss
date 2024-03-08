@@ -15,6 +15,9 @@
     cursor: pointer;
 
     @include lg {
+      width: 120px;
+    }
+    @include sm {
       width: 100px;
     }
   }

@@ -42,6 +42,7 @@ const About = () => {
         { opacity: [0, 1], x: [300, -80, 0] },
         { duration: 1, delay: 1 }
       );
+      animate(".aboutText", { opacity: [0, 1] }, { duration: 2, delay: 1 });
       animate(
         ".technologiesItem",
         { opacity: [0, 1], y: [300, 0] },
@@ -58,6 +59,14 @@ const About = () => {
   return (
     <div className="about" ref={scope}>
       <h1 id="title">About Me</h1>
+      <p className="aboutText">
+        I am an experienced front end developer with knowledge of HTML, CSS,
+        JavaScript and React. I have a lot of experience working with people and
+        I like to work in a team. I will be happy to participate in the creation
+        of convenient projects and applications that help people in their lives
+        and business. I am responsible, I like to acquire new knowledge and I am
+        always ready for challenges.
+      </p>
       <div className="aboutContainer" ref={ref}>
         <div className="technologies">
           <p id="title1">Web technologies in which I have experience</p>
