@@ -33,29 +33,19 @@ const Links = ({ handleCallBack }) => {
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => (
-        <motion.div
-          key={item}
-          variants={itemVariants}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => handleCallBack(false)}
-        >
-          <a
-            href={`#${item}`}
-            // key={item}
-            // variants={itemVariants}
-            // whileHover={{ scale: 1.1 }}
-            // whileTap={{ scale: 0.95 }}
-            // onClick={() => handleCallBack(false)}
-          >
-            {item}
-          </a>
-        </motion.div>
-        // <motion.div key={item}>
-        //   <Link to={`#${item}`} onClick={() => handleCallBack(false)}>
-        //     {item}
-        //   </Link>
-        // </motion.div>
+        // <motion.a
+        //   href={`#${item}`}
+        //   key={item}
+        //   variants={itemVariants}
+        //   whileHover={{ scale: 1.1 }}
+        //   whileTap={{ scale: 0.95 }}
+        //   onClick={() => handleCallBack(false)}
+        // >
+        //   {item}
+        // </motion.a>
+        <a href={`#${item}`} key={item} onClick={() => handleCallBack(false)}>
+          {item}
+        </a>
       ))}
     </motion.div>
   );

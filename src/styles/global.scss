@@ -27,7 +27,7 @@ section {
   scroll-snap-align: center;
 
   @include md {
-    // scroll-snap-align: start end;
+    // scroll-snap-align: none;
   }
 }
 
