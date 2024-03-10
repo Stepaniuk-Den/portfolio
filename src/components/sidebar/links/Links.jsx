@@ -44,7 +44,8 @@ const Links = ({ handleCallBack }) => {
         //   {item}
         // </motion.a>
         <a href={`#${item}`} key={item} onClick={() => handleCallBack(false)}>
-          {item}
+          <span>{item}</span>
+          {/* {item} */}
         </a>
       ))}
     </motion.div>
