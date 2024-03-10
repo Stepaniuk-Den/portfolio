@@ -17,7 +17,7 @@ const Single = ({ item }) => {
   const y = useTransform(scrollYProgress, [0, 1], [-400, 400]);
 
   return (
-    <section id="portfolio">
+    <section id="Portfolio">
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>

@@ -27,9 +27,16 @@ const itemVariants = {
 };
 
 const Links = ({ handleCallBack }) => {
-  const items = ["homepage", "portfolio", "contact", "about me"];
+  const items = ["Homepage", "Portfolio", "Contact", "About Me"];
   // const items = ["Homepage", "Services", "Portfolio", "Contact", "About Me"];
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      handleCallBack(false);
+    }
+  };
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => (
@@ -43,10 +50,19 @@ const Links = ({ handleCallBack }) => {
         // >
         //   {item}
         // </motion.a>
-        <a href={`#${item}`} key={item} onClick={() => handleCallBack(false)}>
-          <span>{item}</span>
-          {/* {item} */}
-        </a>
+        <motion.div
+          key={item}
+          variants={itemVariants}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => scrollToSection(item)}
+        >
+          {item}
+        </motion.div>
+        // <a href={`#${item}`} key={item} onClick={() => handleCallBack(false)}>
+        //   <span>{item}</span>
+        //   {/* {item} */}
+        // </a>
       ))}
     </motion.div>
   );
