@@ -4,6 +4,9 @@
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  @include md {
+    // scroll-snap-type: none;
+  }
 }
 
 * {
@@ -23,7 +26,7 @@ section {
   scroll-snap-align: center;
 
   @include md {
-    // scroll-snap-align: start end;
+    // scroll-snap-align: none;
   }
 }
 
