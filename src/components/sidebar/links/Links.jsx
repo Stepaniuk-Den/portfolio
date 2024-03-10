@@ -27,7 +27,7 @@ const itemVariants = {
 };
 
 const Links = ({ handleCallBack }) => {
-  const items = ["Homepage", "Portfolio", "Contact", "About Me"];
+  const items = ["homepage", "portfolio", "contact", "about me"];
   // const items = ["Homepage", "Services", "Portfolio", "Contact", "About Me"];
 
   return (
