@@ -20,7 +20,7 @@
     font-size: 36px;
 
     @include md {
-      padding-top: calc(100dvh - 100px);
+      // padding-top: calc(100svh - 100px);
       font-size: 24px;
     }
 
@@ -40,12 +40,12 @@
   overflow: hidden;
 
   @include md {
-    padding-top: 100px;
+    // padding-top: 100px;
   }
 
   .wrapper {
     max-width: 1366px;
-    height: calc(100dvh - 100px);
+    height: calc(100svh - 100px);
     margin: auto;
     display: flex;
     justify-content: center;
