@@ -46,9 +46,11 @@
 
         @include lg {
           font-size: 64px;
+          line-height: 64px;
         }
         @include md {
           font-size: 48px;
+          line-height: 50px;
         }
       }
 

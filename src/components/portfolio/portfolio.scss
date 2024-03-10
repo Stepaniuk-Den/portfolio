@@ -5,6 +5,11 @@
 .portfolio {
   position: relative;
 
+  section {
+    // height: 100dvh;
+    // scroll-snap-align: center;
+  }
+
   .progress {
     position: sticky;
     top: 0;
@@ -71,7 +76,7 @@
       @include md {
         flex: 0.8;
         width: 80%;
-        max-height: 300px;
+        max-height: 250px;
       }
 
       img {
@@ -92,7 +97,7 @@
       gap: 30px;
 
       @include md {
-        // transform: none !important;
+        transform: none !important;
         flex: 1.2;
         padding: 10px;
         align-items: center;

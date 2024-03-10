@@ -8,17 +8,13 @@ import Safari from "../../assets/icons/safari.svg";
 
 const Single = ({ item }) => {
   const ref = useRef();
-  const screenWidth = window.screen.width;
+  // const screenWidth = window.screen.width;
 
   const { scrollYProgress } = useScroll({
     target: ref,
   });
 
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [-400, screenWidth > 430 ? 400 : 2000]
-  );
+  const y = useTransform(scrollYProgress, [0, 1], [-400, 400]);
 
   return (
     <section id="Portfolio">
