@@ -21,29 +21,8 @@ const Navbar = () => {
           Stepaniuk Denys
         </motion.span>
         <div className="social">
-          {/* <a
-            href="https://t.me/StepaniukDenys"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={Telegram} alt="telegram" />
-          </a> */}
           <LinkComponent to={`${telegram.telegram}`} svg={telegram.svg} />
-          {/* <a
-            href="https://www.linkedin.com/in/denys-stepaniuk/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={Linkedin} alt="linkedin" />
-          </a> */}
           <LinkComponent to={`${linkedIn.linkedIn}`} svg={linkedIn.svg} />
-          {/* <a
-            href="https://github.com/Stepaniuk-Den"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={Github} alt="github" />
-          </a> */}
           <LinkComponent to={`${gitHub.gitHub}`} svg={gitHub.svg} />
         </div>
       </div>
