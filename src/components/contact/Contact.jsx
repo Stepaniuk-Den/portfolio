@@ -93,7 +93,6 @@ const Contact = () => {
             transition={{ delay: 2, duration: 1 }}
           >
             <svg height="450px" width="450px" viewBox="0 0 512.107 512.107">
-              {/* <svg viewBox="0 0 512.107 512.107"> */}
               <motion.path
                 fill="none"
                 strokeWidth={2}
@@ -143,7 +142,7 @@ const Contact = () => {
             />
             <motion.textarea
               variants={variants}
-              rows={8}
+              rows={6}
               placeholder="Message"
               name="message"
             />
