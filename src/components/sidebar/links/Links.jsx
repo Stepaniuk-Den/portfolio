@@ -32,12 +32,13 @@ const Links = ({ handleCallBack }) => {
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
-    section.classList.add("remove-scroll-snap");
+    // const sectionAll = document.getElementsByTagName("section");
+    // console.log(sectionAll);
+
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
       handleCallBack(false);
     }
-    section.classList.remove("remove-scroll-snap");
   };
   return (
     <motion.div className="links" variants={variants}>

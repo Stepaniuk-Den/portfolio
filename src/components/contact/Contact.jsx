@@ -21,6 +21,7 @@ const variants = {
 };
 const Contact = () => {
   const { phone, email, address } = contacts;
+  const screenWidth = window.screen.width;
 
   const ref = useRef();
   const formRef = useRef();
@@ -123,8 +124,7 @@ const Contact = () => {
             onSubmit={sendEmail}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 3, duration: 1 }}
-            // variants={variants}
+            transition={{ delay: screenWidth > 480 ? 3 : 1, duration: 1 }}
           >
             <motion.input
               variants={variants}

@@ -87,9 +87,9 @@ const About = () => {
                   />
                 </div>
                 <p className="technologiesTitle">
-                  {technology.name.length < 14
+                  {technology.name.length < 13
                     ? technology.name
-                    : technology.name.slice(0, 13) + " .."}
+                    : technology.name.slice(0, 12) + " .."}
                 </p>
               </motion.li>
             ))}

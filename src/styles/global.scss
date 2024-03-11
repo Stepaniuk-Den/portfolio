@@ -19,7 +19,7 @@ body {
 }
 
 section {
-  height: 100dvh;
+  height: 100svh;
   scroll-snap-align: center;
 
   @include md {
@@ -75,17 +75,6 @@ address {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.add-scroll-snap {
-  section {
-    scroll-snap-align: center;
-  }
-}
-.remove-scroll-snap {
-  section {
-    scroll-snap-align: none;
-  }
 }
 
 @mixin absolute-center() {
