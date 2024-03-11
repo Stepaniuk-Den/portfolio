@@ -23,7 +23,7 @@ section {
   scroll-snap-align: center;
 
   @include md {
-    scroll-snap-align: none;
+    // scroll-snap-align: none;
   }
 }
 
@@ -77,15 +77,14 @@ address {
   overflow: hidden;
 }
 
-.scroll-snap {
-  //   html {
-  //   scroll-snap-type: y mandatory;
-  //   scroll-behavior: smooth;
-
-  // }
-
+.add-scroll-snap {
   section {
     scroll-snap-align: center;
+  }
+}
+.remove-scroll-snap {
+  section {
+    scroll-snap-align: none;
   }
 }
 

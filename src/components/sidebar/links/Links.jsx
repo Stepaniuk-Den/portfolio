@@ -32,27 +32,18 @@ const Links = ({ handleCallBack }) => {
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
+    section.classList.add("remove-scroll-snap");
     if (section) {
-      section.classList.add("scroll-snap");
       section.scrollIntoView({ behavior: "smooth" });
       handleCallBack(false);
     }
-    section.classList.remove("scroll-snap");
+    section.classList.remove("remove-scroll-snap");
   };
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => (
-        // <motion.a
-        //   href={`#${item}`}
-        //   key={item}
-        //   variants={itemVariants}
-        //   whileHover={{ scale: 1.1 }}
-        //   whileTap={{ scale: 0.95 }}
-        //   onClick={() => handleCallBack(false)}
-        // >
-        //   {item}
-        // </motion.a>
-        <motion.div
+        <motion.a
+          href={`#${item}`}
           key={item}
           variants={itemVariants}
           whileHover={{ scale: 1.1 }}
@@ -60,7 +51,16 @@ const Links = ({ handleCallBack }) => {
           onClick={() => scrollToSection(item)}
         >
           {item}
-        </motion.div>
+        </motion.a>
+        // <motion.div
+        //   key={item}
+        //   variants={itemVariants}
+        //   whileHover={{ scale: 1.1 }}
+        //   whileTap={{ scale: 0.95 }}
+        //   onClick={() => scrollToSection(item)}
+        // >
+        //   {item}
+        // </motion.div>
       ))}
     </motion.div>
   );
