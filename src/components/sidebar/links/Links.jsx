@@ -33,9 +33,11 @@ const Links = ({ handleCallBack }) => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
+      section.classList.add("scroll-snap");
       section.scrollIntoView({ behavior: "smooth" });
       handleCallBack(false);
     }
+    section.classList.remove("scroll-snap");
   };
   return (
     <motion.div className="links" variants={variants}>
@@ -59,10 +61,6 @@ const Links = ({ handleCallBack }) => {
         >
           {item}
         </motion.div>
-        // <a href={`#${item}`} key={item} onClick={() => handleCallBack(false)}>
-        //   <span>{item}</span>
-        //   {/* {item} */}
-        // </a>
       ))}
     </motion.div>
   );
