@@ -28,16 +28,16 @@ const itemVariants = {
 
 const Links = ({ lang, handleCallBack, scrollToSection }) => {
   const items = [
-    { en: "Homepage", ua: "Головна" },
-    { en: "Portfolio", ua: "Портфоліо" },
-    { en: "Contact", ua: "Контакти" },
-    { en: "About Me", ua: "Про Мене" },
+    { ref: "homepageRef", en: "Homepage", ua: "Головна" },
+    { ref: "portfolioRef", en: "Portfolio", ua: "Портфоліо" },
+    { ref: "contactRef", en: "Contact", ua: "Контакти" },
+    { ref: "aboutRef", en: "About Me", ua: "Про Мене" },
   ];
   // const items = ["Homepage", "Services", "Portfolio", "Contact", "About Me"];
 
-  const handleScroll = (sectionId) => {
+  const handleScroll = (ref) => {
     // const section = document.getElementById(sectionId);
-    scrollToSection(sectionId);
+    scrollToSection(ref);
     handleCallBack(false);
 
     // if (section) {
@@ -53,7 +53,7 @@ const Links = ({ lang, handleCallBack, scrollToSection }) => {
           variants={itemVariants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => handleScroll(item.en)}
+          onClick={() => handleScroll(item.ref)}
         >
           {lang === "en" && item.en}
           {lang === "ua" && item.ua}
