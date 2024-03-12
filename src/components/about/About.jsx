@@ -1,4 +1,5 @@
 import "./about.scss";
+import PropTypes from "prop-types";
 import { docs } from "../../data/documents";
 import { technologies } from "../../data/technologies";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
@@ -18,7 +19,7 @@ const variants = {
   },
 };
 
-const About = () => {
+const About = ({ lang }) => {
   const [scope, animate] = useAnimate();
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-100px" });
@@ -58,18 +59,36 @@ const About = () => {
 
   return (
     <div className="about" ref={scope}>
-      <h1 id="title">About Me</h1>
-      <p className="aboutText">
-        I am an experienced front end developer with knowledge of HTML, CSS,
-        JavaScript and React. I have a lot of experience working with people and
-        I like to work in a team. I will be happy to participate in the creation
-        of convenient projects and applications that help people in their lives
-        and business. I am responsible, I like to acquire new knowledge and I am
-        always ready for challenges.
-      </p>
+      <h1 id="title">
+        {lang === "en" && "About Me"}
+        {lang === "ua" && "Про Мене"}
+      </h1>
+      {lang === "en" && (
+        <p className="aboutText">
+          I am an experienced front end developer with knowledge of HTML, CSS,
+          JavaScript and React. I have a lot of experience working with people
+          and I like to work in a team. I will be happy to participate in the
+          creation of convenient projects and applications that help people in
+          their lives and business. I am responsible, I like to acquire new
+          knowledge and I am always ready for challenges.
+        </p>
+      )}
+      {lang === "ua" && (
+        <p className="aboutText">
+          Я досвідчений фронтенд розробник зі знанням HTML, CSS, JavaScript і
+          React. Маю великий досвід роботи з людьми і люблю працювати в команді.
+          Буду радий брати участь у створенні зручних проектів та додатків, які
+          допомагають людям у житті та бізнесі. Я відповідальний, люблю
+          здобувати нові знання та завжди готова до викликів.
+        </p>
+      )}
+
       <div className="aboutContainer" ref={ref}>
         <div className="technologies">
-          <p id="title1">Web technologies in which I have experience</p>
+          <p id="title1">
+            {lang === "en" && "Web technologies in which I have experience"}
+            {lang === "ua" && "Веб-технології, в яких я маю досвід"}
+          </p>
           <ul className="technologiesList">
             {technologies.map((technology) => (
               <motion.li
@@ -96,7 +115,10 @@ const About = () => {
           </ul>
         </div>
         <div className="documents">
-          <p id="title2">My Documents</p>
+          <p id="title2">
+            {lang === "en" && "My Documents"}
+            {lang === "ua" && "Мої документи"}
+          </p>
           <ul className="documentsList">
             {docs.map((doc) => (
               <DocumentItem
@@ -119,6 +141,10 @@ const About = () => {
       )}
     </div>
   );
+};
+
+About.propTypes = {
+  lang: PropTypes.string,
 };
 
 export default About;

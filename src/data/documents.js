@@ -13,7 +13,7 @@ export const docs = [
   {
     id: 1,
     docTitle: {
-      eng: "Resume",
+      en: "Resume",
       ua: "Резюме",
     },
     docImg: Cv,
@@ -22,7 +22,7 @@ export const docs = [
   {
     id: 2,
     docTitle: {
-      eng: "Full-stack certificate",
+      en: "Full-stack certificate",
       ua: "Full-stack сертифікат",
     },
     docImg: Certificate,
@@ -31,7 +31,7 @@ export const docs = [
   {
     id: 3,
     docTitle: {
-      eng: "Full-stack part 1",
+      en: "Full-stack part 1",
       ua: "Full-stack частина 1",
     },
     docImg: Fullstack1,
@@ -40,7 +40,7 @@ export const docs = [
   {
     id: 4,
     docTitle: {
-      eng: "Full-stack part 2",
+      en: "Full-stack part 2",
       ua: "Full-stack частина 2",
     },
     docImg: Fullstack2,
@@ -49,7 +49,7 @@ export const docs = [
   {
     id: 5,
     docTitle: {
-      eng: "Full-stack part 3",
+      en: "Full-stack part 3",
       ua: "Full-stack частина 3",
     },
     docImg: Fullstack3,

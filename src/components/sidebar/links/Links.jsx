@@ -26,32 +26,37 @@ const itemVariants = {
   },
 };
 
-const Links = ({ handleCallBack }) => {
-  const items = ["Homepage", "Portfolio", "Contact", "About Me"];
+const Links = ({ lang, handleCallBack, scrollToSection }) => {
+  const items = [
+    { en: "Homepage", ua: "Головна" },
+    { en: "Portfolio", ua: "Портфоліо" },
+    { en: "Contact", ua: "Контакти" },
+    { en: "About Me", ua: "Про Мене" },
+  ];
   // const items = ["Homepage", "Services", "Portfolio", "Contact", "About Me"];
 
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    // const sectionAll = document.getElementsByTagName("section");
-    // console.log(sectionAll);
+  const handleScroll = (sectionId) => {
+    // const section = document.getElementById(sectionId);
+    scrollToSection(sectionId);
+    handleCallBack(false);
 
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      handleCallBack(false);
-    }
+    // if (section) {
+    //   section.scrollIntoView({ behavior: "smooth" });
+    // }
   };
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => (
         <motion.a
-          href={`#${item}`}
-          key={item}
+          href={`#${item.en}`}
+          key={item.en}
           variants={itemVariants}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => scrollToSection(item)}
+          onClick={() => handleScroll(item.en)}
         >
-          {item}
+          {lang === "en" && item.en}
+          {lang === "ua" && item.ua}
         </motion.a>
         // <motion.div
         //   key={item}
@@ -69,5 +74,7 @@ const Links = ({ handleCallBack }) => {
 
 Links.propTypes = {
   handleCallBack: PropTypes.func.isRequired,
+  scrollToSection: PropTypes.func.isRequired,
+  lang: PropTypes.string,
 };
 export default Links;

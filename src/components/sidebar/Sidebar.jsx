@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import "./sidebar.scss";
 import Links from "./links/Links";
 import ToggleButton from "./toggleButton/ToggleButton";
@@ -23,7 +24,7 @@ const variants = {
   },
 };
 
-const Sidebar = () => {
+const Sidebar = ({ lang, scrollToSection }) => {
   const [open, setOpen] = useState(false);
 
   const CallBack = (childData) => {
@@ -33,11 +34,20 @@ const Sidebar = () => {
   return (
     <motion.div className="sidebar" animate={open ? "open" : "closed"}>
       <motion.div className="bg" variants={variants}>
-        <Links handleCallBack={CallBack} />
+        <Links
+          lang={lang}
+          handleCallBack={CallBack}
+          scrollToSection={scrollToSection}
+        />
       </motion.div>
       <ToggleButton setOpen={setOpen} />
     </motion.div>
   );
 };
 
+Sidebar.propTypes = {
+  lang: PropTypes.string,
+  changeLanguage: PropTypes.func,
+  scrollToSection: PropTypes.func.isRequired,
+};
 export default Sidebar;

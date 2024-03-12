@@ -45,8 +45,8 @@
       }
 
       h1 {
-        font-size: 100px;
-        line-height: 88px;
+        font-size: 90px;
+        line-height: 90px;
 
         @include lg {
           font-size: 64px;
@@ -63,6 +63,8 @@
         flex-direction: column;
 
         h2 {
+          font-size: 44px;
+          line-height: 50px;
           @include md {
             font-size: 32px;
             line-height: 36px;

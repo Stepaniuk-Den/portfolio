@@ -6,7 +6,7 @@ import { projects } from "../../data/projects";
 import Github from "../../assets/icons/github copy.svg";
 import Safari from "../../assets/icons/safari.svg";
 
-const Single = ({ item }) => {
+const Single = ({ item, lang }) => {
   const ref = useRef();
   // const screenWidth = window.screen.width;
 
@@ -25,7 +25,10 @@ const Single = ({ item }) => {
           </div>
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.name}</h2>
-            <p>{item.descEng}</p>
+            <p>
+              {lang === "en" && item.descEn}
+              {lang === "ua" && item.descUa}
+            </p>
             <div className="projectDetails">
               <ul>
                 {item.technologies.map((technology) => (
@@ -40,7 +43,10 @@ const Single = ({ item }) => {
                   </li>
                 ))}
               </ul>
-              <p>{item.roleEng}</p>
+              <p>
+                {lang === "en" && item.roleEn}
+                {lang === "ua" && item.roleUa}
+              </p>
             </div>
             <div className="buttonContainer">
               <button>
@@ -63,7 +69,7 @@ const Single = ({ item }) => {
   );
 };
 
-const Portfolio = () => {
+const Portfolio = ({ lang }) => {
   const ref = useRef();
 
   const { scrollYProgress } = useScroll({
@@ -78,31 +84,42 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio" ref={ref}>
-      <h2 className="title">My projects</h2>
+      <h2 className="title">
+        {lang === "en" && "My projects"}
+        {lang === "ua" && "Мої проєкти"}
+      </h2>
       <div className="progress">
-        <h1>Featured Works</h1>
+        <h1>
+          {lang === "en" && "Featured Works"}
+          {lang === "ua" && "Останні роботи"}
+        </h1>
         <motion.div className="progressBar" style={{ scaleX }}></motion.div>
       </div>
       {projects.map((item) => (
-        <Single item={item} key={item.id} />
+        <Single item={item} key={item.id} lang={lang} />
       ))}
     </div>
   );
 };
 
 Single.propTypes = {
+  lang: PropTypes.string,
   item: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
     web: PropTypes.string.isRequired,
     gitHub: PropTypes.string.isRequired,
-    descEng: PropTypes.string,
+    descEn: PropTypes.string,
     descUa: PropTypes.string,
-    roleEng: PropTypes.string,
+    roleEn: PropTypes.string,
     roleUa: PropTypes.string,
     technologies: PropTypes.array,
   }).isRequired,
+};
+
+Portfolio.propTypes = {
+  lang: PropTypes.string,
 };
 
 export default Portfolio;

@@ -21,8 +21,9 @@
     }
 
     @include md {
-      justify-content: center;
-      align-items: flex-end;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
       padding: 20px;
     }
 
@@ -42,7 +43,12 @@
 
     .social {
       display: flex;
-      gap: 20px;
+      gap: 10px;
+      margin-left: auto;
+
+      @include md {
+        margin-left: none;
+      }
 
       img {
         width: 32px;

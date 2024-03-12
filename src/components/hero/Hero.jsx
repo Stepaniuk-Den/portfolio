@@ -1,4 +1,5 @@
 import "./hero.scss";
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
 const textVariants = {
@@ -49,7 +50,7 @@ const scrollToSection = (sectionId) => {
   }
 };
 
-const Hero = () => {
+const Hero = ({ lang }) => {
   return (
     <div className="hero">
       <div className="wrapper">
@@ -59,22 +60,30 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
-          <motion.h2 variants={textVariants}>STEPANIUK DENYS</motion.h2>
-          <motion.h1 variants={textVariants}>Web developer</motion.h1>
+          <motion.h2 variants={textVariants}>
+            {lang === "en" && "STEPANIUK DENYS"}
+            {lang === "ua" && "СТЕПАНЮК ДЕНИС"}
+          </motion.h2>
+          <motion.h1 variants={textVariants}>
+            {lang === "en" && "Web developer"}
+            {lang === "ua" && "Веб розробник"}
+          </motion.h1>
           <motion.div className="buttons" variants={textVariants}>
             <motion.button
               variants={textVariants}
               whileHover={{ backgroundColor: "#ffffff", color: "#000000" }}
               onClick={() => scrollToSection("Portfolio")}
             >
-              See the Latest Works
+              {lang === "en" && "See the Latest Works"}
+              {lang === "ua" && "Останні роботи"}
             </motion.button>
             <motion.button
               variants={textVariants}
               whileHover={{ backgroundColor: "#ffffff", color: "#000000" }}
               onClick={() => scrollToSection("Contact")}
             >
-              Contact Me
+              {lang === "en" && "Contact Me"}
+              {lang === "ua" && "Мої контакти"}
             </motion.button>
           </motion.div>
           <motion.img
@@ -98,6 +107,10 @@ const Hero = () => {
       </div>
     </div>
   );
+};
+
+Hero.propTypes = {
+  lang: PropTypes.string,
 };
 
 export default Hero;

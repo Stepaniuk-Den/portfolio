@@ -1,33 +1,39 @@
 import "./navbar.scss";
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Sidebar from "../sidebar/Sidebar";
-// import Telegram from "../../assets/icons/telegram.svg";
-// import Linkedin from "../../assets/icons/linkedin.svg";
-// import Github from "../../assets/icons/github copy.svg";
 import LinkComponent from "../linkComponent/LinkComponent";
 import { contacts } from "../../data/contacts";
+import SwitchLang from "../switchLang/switchLang";
 
-const Navbar = () => {
+const Navbar = ({ lang, changeLanguage, scrollToSection }) => {
   const { telegram, gitHub, linkedIn } = contacts;
   return (
     <div className="navbar">
-      <Sidebar />
+      <Sidebar lang={lang} scrollToSection={scrollToSection} />
       <div className="wrapper">
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Stepaniuk Denys
+          {lang === "en" && "Stepaniuk Denys"}
+          {lang === "ua" && "Степанюк Денис"}
         </motion.span>
         <div className="social">
           <LinkComponent to={`${telegram.telegram}`} svg={telegram.svg} />
           <LinkComponent to={`${linkedIn.linkedIn}`} svg={linkedIn.svg} />
           <LinkComponent to={`${gitHub.gitHub}`} svg={gitHub.svg} />
         </div>
+        <SwitchLang lang={lang} changeLanguage={changeLanguage} />
       </div>
     </div>
   );
 };
 
+Navbar.propTypes = {
+  lang: PropTypes.string,
+  changeLanguage: PropTypes.func,
+  scrollToSection: PropTypes.func.isRequired,
+};
 export default Navbar;

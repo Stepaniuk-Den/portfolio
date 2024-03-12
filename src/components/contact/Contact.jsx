@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import PropTypes from "prop-types";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -19,7 +20,7 @@ const variants = {
     },
   },
 };
-const Contact = () => {
+const Contact = ({ lang }) => {
   const { phone, email, address } = contacts;
   const screenWidth = window.screen.width;
 
@@ -58,9 +59,15 @@ const Contact = () => {
         animate={isInView && "animate"}
       >
         <motion.div className="textContainer" variants={variants}>
-          <motion.h1 variants={variants}>Let&apos;s work together</motion.h1>
+          <motion.h1 variants={variants}>
+            {lang === "en" && "Let's work together"}
+            {lang === "ua" && "Давайте працювати разом"}
+          </motion.h1>
           <motion.div className="item" variants={variants}>
-            <h2>Mail</h2>
+            <h2>
+              {lang === "en" && "Mail"}
+              {lang === "ua" && "Пошта"}
+            </h2>
             <LinkComponent
               to={`mailto:${email.email}`}
               type="email"
@@ -69,7 +76,10 @@ const Contact = () => {
             />
           </motion.div>
           <motion.div className="item" variants={variants}>
-            <h2>Phone</h2>
+            <h2>
+              {lang === "en" && "Phone"}
+              {lang === "ua" && "Телефон"}
+            </h2>
             <LinkComponent
               to={`tel:${phone.number}`}
               type="phone"
@@ -78,7 +88,10 @@ const Contact = () => {
             />
           </motion.div>
           <motion.div className="item" variants={variants}>
-            <h2>Address</h2>
+            <h2>
+              {lang === "en" && "Address"}
+              {lang === "ua" && "Адреса"}
+            </h2>
             <LinkComponent
               to={`${address.location}`}
               text={address.text}
@@ -146,7 +159,10 @@ const Contact = () => {
               placeholder="Message"
               name="message"
             />
-            <motion.button variants={variants}>Submit</motion.button>
+            <motion.button variants={variants}>
+              {lang === "en" && "Submit"}
+              {lang === "ua" && "Підтвердити"}
+            </motion.button>
             {error && "Error"}
             {success && "Success"}
           </motion.form>
@@ -154,6 +170,10 @@ const Contact = () => {
       </motion.div>
     </div>
   );
+};
+
+Contact.propTypes = {
+  lang: PropTypes.string,
 };
 
 export default Contact;
