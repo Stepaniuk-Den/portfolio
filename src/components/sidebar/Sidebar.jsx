@@ -24,7 +24,7 @@ const variants = {
   },
 };
 
-const Sidebar = ({ lang, scrollToSection }) => {
+const Sidebar = ({ lang }) => {
   const [open, setOpen] = useState(false);
 
   const CallBack = (childData) => {
@@ -34,11 +34,7 @@ const Sidebar = ({ lang, scrollToSection }) => {
   return (
     <motion.div className="sidebar" animate={open ? "open" : "closed"}>
       <motion.div className="bg" variants={variants}>
-        <Links
-          lang={lang}
-          handleCallBack={CallBack}
-          scrollToSection={scrollToSection}
-        />
+        <Links lang={lang} handleCallBack={CallBack} />
       </motion.div>
       <ToggleButton setOpen={setOpen} />
     </motion.div>
@@ -48,6 +44,5 @@ const Sidebar = ({ lang, scrollToSection }) => {
 Sidebar.propTypes = {
   lang: PropTypes.string,
   changeLanguage: PropTypes.func,
-  scrollToSection: PropTypes.func.isRequired,
 };
 export default Sidebar;

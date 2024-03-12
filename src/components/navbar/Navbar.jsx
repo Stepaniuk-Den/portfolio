@@ -6,11 +6,11 @@ import LinkComponent from "../linkComponent/LinkComponent";
 import { contacts } from "../../data/contacts";
 import SwitchLang from "../switchLang/switchLang";
 
-const Navbar = ({ lang, changeLanguage, scrollToSection }) => {
+const Navbar = ({ lang, changeLanguage }) => {
   const { telegram, gitHub, linkedIn } = contacts;
   return (
     <div className="navbar">
-      <Sidebar lang={lang} scrollToSection={scrollToSection} />
+      <Sidebar lang={lang} />
       <div className="wrapper">
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}
@@ -34,6 +34,5 @@ const Navbar = ({ lang, changeLanguage, scrollToSection }) => {
 Navbar.propTypes = {
   lang: PropTypes.string,
   changeLanguage: PropTypes.func,
-  scrollToSection: PropTypes.func.isRequired,
 };
 export default Navbar;
