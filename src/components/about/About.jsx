@@ -22,7 +22,7 @@ const variants = {
 const About = ({ lang }) => {
   const [scope, animate] = useAnimate();
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-100px" });
+  const isInView = useInView(ref, { margin: "100px" });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [docId, setDocId] = useState(null);
 

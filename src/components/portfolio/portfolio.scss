@@ -43,6 +43,10 @@
     .progressBar {
       height: 10px;
       background-color: $main-color;
+
+      @include md {
+        display: none;
+      }
     }
   }
 }
