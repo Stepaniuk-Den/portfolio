@@ -44,6 +44,9 @@
       h1 {
         font-size: 88px;
 
+        @include lg {
+          font-size: 68px;
+        }
         @include md {
           font-size: 36px;
         }
@@ -78,6 +81,7 @@
     top: 0;
     right: 0;
     height: 100%;
+    padding: 0 24px;
 
     @include xl {
       height: 80%;

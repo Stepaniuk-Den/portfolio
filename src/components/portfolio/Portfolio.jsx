@@ -19,7 +19,7 @@ const Single = ({ item, lang }) => {
   return (
     <section id="Portfolio">
       <div className="container">
-        <div className="wrapper">
+        <div className="wrapperPortfolio">
           <div className="imageContainer" ref={ref}>
             <img src={item.img} alt={item.name} />
           </div>

@@ -11,7 +11,7 @@ const Navbar = ({ lang, changeLanguage }) => {
   return (
     <div className="navbar">
       <Sidebar lang={lang} />
-      <div className="wrapper">
+      <div className="wrapperNavbar">
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
