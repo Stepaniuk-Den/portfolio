@@ -45,7 +45,7 @@ const Modal = ({ isModalOpen, setIsModalOpen, docId }) => {
   return createPortal(
     <>
       <div className="modal" onClick={handleClickOverlay}>
-        <div className="wrapper">
+        <div className="wrapperModal">
           <h2>{docItem.docTitle.eng}</h2>
           <img src={docItem.docImg} alt={docItem.docTitle.eng} />
           <IoMdClose

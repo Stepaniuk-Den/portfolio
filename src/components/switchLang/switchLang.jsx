@@ -21,6 +21,8 @@ const SwitchLang = ({ lang, changeLanguage }) => {
     };
   }, [openSelect]);
   const handleOnClickSelect = () => {
+    const check = document.getElementById(["EN"]);
+    check.setAttribute("checked", true);
     setOpenSelect(!openSelect);
   };
 
