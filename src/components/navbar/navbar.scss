@@ -18,6 +18,7 @@
     }
     @include xl {
       padding: 0;
+      gap: 10px;
     }
 
     @include md {
@@ -28,7 +29,6 @@
     }
     @include sm {
       padding: 20px 0;
-      gap: 10px;
     }
 
     span {
