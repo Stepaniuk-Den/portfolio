@@ -137,6 +137,7 @@ const About = ({ lang }) => {
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
           docId={docId}
+          lang={lang}
         />
       )}
     </div>
@@ -144,7 +145,7 @@ const About = ({ lang }) => {
 };
 
 About.propTypes = {
-  lang: PropTypes.string,
+  lang: PropTypes.string.isRequired,
 };
 
 export default About;

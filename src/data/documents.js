@@ -23,7 +23,7 @@ export const docs = [
     id: 2,
     docTitle: {
       en: "Full-stack certificate",
-      ua: "Full-stack сертифікат",
+      ua: "Фулл-стек сертифікат",
     },
     docImg: Certificate,
     path: Fs1Pdf,
@@ -32,7 +32,7 @@ export const docs = [
     id: 3,
     docTitle: {
       en: "Full-stack part 1",
-      ua: "Full-stack частина 1",
+      ua: "Фулл-стек частина 1",
     },
     docImg: Fullstack1,
     path: Fs2Pdf,
@@ -41,7 +41,7 @@ export const docs = [
     id: 4,
     docTitle: {
       en: "Full-stack part 2",
-      ua: "Full-stack частина 2",
+      ua: "Фулл-стек частина 2",
     },
     docImg: Fullstack2,
     path: Fs3Pdf,
@@ -50,7 +50,7 @@ export const docs = [
     id: 5,
     docTitle: {
       en: "Full-stack part 3",
-      ua: "Full-stack частина 3",
+      ua: "Фулл-стек частина 3",
     },
     docImg: Fullstack3,
     path: CertificatePdf,

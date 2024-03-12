@@ -7,7 +7,7 @@ import { docs } from "../../data/documents";
 
 const modalRoot = document.querySelector("#modal-root");
 
-const Modal = ({ isModalOpen, setIsModalOpen, docId }) => {
+const Modal = ({ isModalOpen, setIsModalOpen, docId, lang }) => {
   const docItem = docs.find((doc) => doc.id === docId);
 
   useEffect(() => {
@@ -46,7 +46,10 @@ const Modal = ({ isModalOpen, setIsModalOpen, docId }) => {
     <>
       <div className="modal" onClick={handleClickOverlay}>
         <div className="wrapperModal">
-          <h2>{docItem.docTitle.eng}</h2>
+          <h2>
+            {lang === "en" && docItem.docTitle.en}
+            {lang === "ua" && docItem.docTitle.ua}
+          </h2>
           <img src={docItem.docImg} alt={docItem.docTitle.eng} />
           <IoMdClose
             className="closeModal"
@@ -64,6 +67,7 @@ Modal.propTypes = {
   docId: PropTypes.number.isRequired,
   isModalOpen: PropTypes.bool.isRequired,
   setIsModalOpen: PropTypes.func.isRequired,
+  lang: PropTypes.string.isRequired,
 };
 
 export default Modal;

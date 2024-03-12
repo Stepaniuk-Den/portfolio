@@ -21,7 +21,7 @@ const Single = ({ item, lang }) => {
       <div className="container">
         <div className="wrapperPortfolio">
           <div className="imageContainer" ref={ref}>
-            <img src={item.img} alt={item.name} />
+            <img src={item.img} alt={item.name} loading="lazy" />
           </div>
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.name}</h2>
@@ -119,7 +119,7 @@ Single.propTypes = {
 };
 
 Portfolio.propTypes = {
-  lang: PropTypes.string,
+  lang: PropTypes.string.isRequired,
 };
 
 export default Portfolio;
