@@ -8,7 +8,6 @@ import Safari from "../../assets/icons/safari.svg";
 
 const Single = ({ item, lang }) => {
   const ref = useRef();
-  // const screenWidth = window.screen.width;
 
   const { scrollYProgress } = useScroll({
     target: ref,

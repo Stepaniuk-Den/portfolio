@@ -34,14 +34,6 @@ const Links = ({ lang, handleCallBack }) => {
     { en: "About Me", ua: "Про Мене" },
   ];
 
-  // const handleScroll = (sectionId) => {
-  //   const section = document.getElementById(sectionId);
-
-  //   if (section) {
-  //     section.scrollIntoView({ behavior: "smooth" });
-  //     handleCallBack(false);
-  //   }
-  // };
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => (
@@ -56,16 +48,6 @@ const Links = ({ lang, handleCallBack }) => {
           {lang === "en" && item.en}
           {lang === "ua" && item.ua}
         </motion.a>
-        // <motion.div
-        //   key={item.en}
-        //   variants={itemVariants}
-        //   whileHover={{ scale: 1.1 }}
-        //   whileTap={{ scale: 0.95 }}
-        //   onClick={() => handleScroll(item.ref)}
-        // >
-        //   {lang === "en" && item.en}
-        //   {lang === "ua" && item.ua}
-        // </motion.div>
       ))}
     </motion.div>
   );
