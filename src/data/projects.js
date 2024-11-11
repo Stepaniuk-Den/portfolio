@@ -4,6 +4,8 @@ import Dashboard1 from "../assets/images/Dashboard_1.webp";
 import ImageFinder from "../assets/images/ImageFinder.webp";
 import RentalCar from "../assets/images/RentalCar.webp";
 import MoneyGuard from "../assets/images/Money Guard.webp";
+import BankHotel from "../assets/images/BankHotel.webp";
+import Envent from "../assets/images/Envent.webp";
 
 export const projects = [
   {
@@ -100,5 +102,44 @@ export const projects = [
     roleUa: "Роль: Розробник",
     web: "https://stepaniuk-den.github.io/MoneyGuard/login",
     gitHub: "https://github.com/Stepaniuk-Den/MoneyGuard",
+  },
+  {
+    id: 6,
+    name: "Bank Hotel",
+    technologies: [
+      technologies[3],
+      technologies[4],
+      technologies[13],
+      technologies[5],
+      technologies[22],
+    ], //React, JS, Redux, Styled-Components
+    img: BankHotel,
+    descEn:
+      "BankHotel is a project designed to showcase the luxurious and modern facilities of a high-end hotel. The website features a clean and elegant design, providing potential guests with all the information they need to choose BankHotel for their stay.",
+    descUa:
+      "BankHotel – це проект, розроблений для демонстрації розкішних і сучасних зручностей готелю високого класу. Веб-сайт має чистий та елегантний дизайн, надаючи потенційним гостям всю необхідну інформацію, щоб вибрати BankHotel для свого перебування.",
+    roleEn: "Role: Devepoler",
+    roleUa: "Роль: Розробник",
+    web: "https://bank-hotel-eight.vercel.app/#home",
+    gitHub: "https://github.com/Elonka5/bank-hotel",
+  },
+  {
+    id: 7,
+    name: "Envent",
+    technologies: [
+      technologies[8],
+      technologies[4],
+      technologies[5],
+      technologies[23],
+    ], //NextJS, React, JS, SCSS
+    img: Envent,
+    descEn:
+      "Envent is a project developed for Energoventilatsia LLC, which is a multi-page site where the user can find all the necessary information about the company and the services it provides.",
+    descUa:
+      "Envent – це проект, розроблений для ТОВ Енерговентиляція, який представляє собою багатосторінковий сайт, на якому користувач може знайти всю необхідну інформацію про фірму та надаваємі нею послуги.",
+    roleEn: "Role: Devepoler",
+    roleUa: "Роль: Розробник",
+    web: "https://envent.vercel.app/en",
+    gitHub: "https://github.com/Stepaniuk-Den/envent",
   },
 ];
