@@ -8,23 +8,23 @@ import Envent from "../assets/images/Envent.webp";
 
 export const projects = [
   {
-    id: 5,
-    name: "Dashboard",
+    id: 1,
+    name: "Envent",
     technologies: [
-      technologies[3],
+      technologies[8],
       technologies[4],
-      technologies[22],
+      technologies[5],
       technologies[23],
-    ], //React, JS, Firebase, SASS...
-    img: Dashboard1,
+    ], //NextJS, React, JS, SCSS
+    img: Envent,
     descEn:
-      "This application is a test task that simulates a page with information panels. Registration and login using firebase works here. Validation using Yup, the password must contain min of 6 characters and required for a correct must contain 1 lowercase, 1 uppercase letter and 1 number.",
+      "Envent is a project developed for Energoventilatsia LLC, which is a multi-page site where the user can find all the necessary information about the company and the services it provides.",
     descUa:
-      "Цей додаток є тестовим завданням, яке імітує сторінку з інформаційними панелями. Тут працює реєстрація та вхід за допомогою firebase. Перевірка за допомогою Yup, пароль має містити щонайменше 6 символів і має містити 1 малу, 1 велику літеру та 1 цифру.",
+      "Envent – це проект, розроблений для ТОВ Енерговентиляція, який представляє собою багатосторінковий сайт, на якому користувач може знайти всю необхідну інформацію про фірму та надаваємі нею послуги.",
     roleEn: "Role: Devepoler",
     roleUa: "Роль: Розробник",
-    web: "https://stden-dashboard-test.netlify.app/",
-    gitHub: "https://github.com/Stepaniuk-Den/react-dashboard-test",
+    web: "https://envent.vercel.app/en",
+    gitHub: "https://github.com/Stepaniuk-Den/envent",
   },
   {
     id: 2,
@@ -84,6 +84,25 @@ export const projects = [
     gitHub: "https://github.com/Stepaniuk-Den/RentalCar",
   },
   {
+    id: 5,
+    name: "Dashboard",
+    technologies: [
+      technologies[3],
+      technologies[4],
+      technologies[22],
+      technologies[23],
+    ], //React, JS, Firebase, SASS...
+    img: Dashboard1,
+    descEn:
+      "This application is a test task that simulates a page with information panels. Registration and login using firebase works here. Validation using Yup, the password must contain min of 6 characters and required for a correct must contain 1 lowercase, 1 uppercase letter and 1 number.",
+    descUa:
+      "Цей додаток є тестовим завданням, яке імітує сторінку з інформаційними панелями. Тут працює реєстрація та вхід за допомогою firebase. Перевірка за допомогою Yup, пароль має містити щонайменше 6 символів і має містити 1 малу, 1 велику літеру та 1 цифру.",
+    roleEn: "Role: Devepoler",
+    roleUa: "Роль: Розробник",
+    web: "https://stden-dashboard-test.netlify.app/",
+    gitHub: "https://github.com/Stepaniuk-Den/react-dashboard-test",
+  },
+  {
     id: 6,
     name: "Bank Hotel",
     technologies: [
@@ -102,24 +121,5 @@ export const projects = [
     roleUa: "Роль: Розробник",
     web: "https://bank-hotel-eight.vercel.app/#home",
     gitHub: "https://github.com/Elonka5/bank-hotel",
-  },
-  {
-    id: 1,
-    name: "Envent",
-    technologies: [
-      technologies[8],
-      technologies[4],
-      technologies[5],
-      technologies[23],
-    ], //NextJS, React, JS, SCSS
-    img: Envent,
-    descEn:
-      "Envent is a project developed for Energoventilatsia LLC, which is a multi-page site where the user can find all the necessary information about the company and the services it provides.",
-    descUa:
-      "Envent – це проект, розроблений для ТОВ Енерговентиляція, який представляє собою багатосторінковий сайт, на якому користувач може знайти всю необхідну інформацію про фірму та надаваємі нею послуги.",
-    roleEn: "Role: Devepoler",
-    roleUa: "Роль: Розробник",
-    web: "https://envent.vercel.app/en",
-    gitHub: "https://github.com/Stepaniuk-Den/envent",
   },
 ];
