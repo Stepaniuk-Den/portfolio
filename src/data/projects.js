@@ -3,13 +3,12 @@ import MKtest1 from "../assets/images/MK-Test_1.webp";
 import Dashboard1 from "../assets/images/Dashboard_1.webp";
 import ImageFinder from "../assets/images/ImageFinder.webp";
 import RentalCar from "../assets/images/RentalCar.webp";
-import MoneyGuard from "../assets/images/Money Guard.webp";
 import BankHotel from "../assets/images/BankHotel.webp";
 import Envent from "../assets/images/Envent.webp";
 
 export const projects = [
   {
-    id: 1,
+    id: 5,
     name: "Dashboard",
     technologies: [
       technologies[3],
@@ -85,25 +84,6 @@ export const projects = [
     gitHub: "https://github.com/Stepaniuk-Den/RentalCar",
   },
   {
-    id: 5,
-    name: "Money Guard",
-    technologies: [
-      technologies[3],
-      technologies[4],
-      technologies[13],
-      technologies[5],
-    ], //React, JS, Redux, Styled-Components
-    img: MoneyGuard,
-    descEn:
-      "An application for keeping records of home accounting.The application helps to keep track of your income and expenses, to receive exchange rates.",
-    descUa:
-      "Це додаток для ведення обліку домашньої бухгалтерії. Додаток допомагає вести облік ваших доходів і витрат, отримувати курси валют.",
-    roleEn: "Role: Devepoler",
-    roleUa: "Роль: Розробник",
-    web: "https://stepaniuk-den.github.io/MoneyGuard/login",
-    gitHub: "https://github.com/Stepaniuk-Den/MoneyGuard",
-  },
-  {
     id: 6,
     name: "Bank Hotel",
     technologies: [
@@ -124,7 +104,7 @@ export const projects = [
     gitHub: "https://github.com/Elonka5/bank-hotel",
   },
   {
-    id: 7,
+    id: 1,
     name: "Envent",
     technologies: [
       technologies[8],
